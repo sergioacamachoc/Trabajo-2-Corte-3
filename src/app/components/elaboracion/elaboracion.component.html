@@ -1,0 +1,63 @@
+<br>
+<br>
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Elaboración de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos de la nueva elaboración)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="solicitud" class="col-form-label col-sm2">Solicitud</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedElaboracion.solicitud" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="pasteleros" class="col-form-label col-sm2">Pastelero</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedElaboracion.pasteleros" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="ingredientes" class="col-form-label col-sm2">Ingrediente</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedElaboracion.ingredientes" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <ul>
+            <li *ngFor="let elaboracion of elaboraciones">
+                <h5 (click)="elaboracionClicked(elaboracion)">{{elaboracion.solicitud}} - {{elaboracion.pasteleros}} - {{elaboracion.ingredientes}}
+                </h5>
+            </li>
+        </ul>
+        <button (click)="updateElaboracion()">update</button>
+        <button (click)="addElaboracion()">create</button>
+        <button (click)="deleteElaboracion()">delete</button>      
+    </div>
+</div>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Solicitud</th>
+            <th>Pasteleros</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let elaboracion of elaboraciones">
+            <td>{{elaboracion.solicitud}}</td>
+            <td>{{elaboracion.pasteleros}}</td>
+            <td>{{elaboracion.ingredientes}}</td>
+        </tr>
+    </tbody>
+</table>

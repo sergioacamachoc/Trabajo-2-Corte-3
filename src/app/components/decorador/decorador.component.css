@@ -1,0 +1,32 @@
+div.transparent {
+    margin: 30px;
+    opacity: 0.6;
+  }
+  
+  div.transparent p {
+    margin: 5%;
+    font-weight: bold;
+  }
+
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    color: #f6e1c5;
+  }
+
+  h3 {
+    color: #f6e1c5;
+  }
+  
+  label {
+    color: #f6e1c5;
+  }
+
+  h5 {
+    color: #f6e1c5;
+  }

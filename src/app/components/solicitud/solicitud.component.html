@@ -1,0 +1,112 @@
+<br>
+<br>
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Solicitudes de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos de la nueva solicitud)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group">
+                <label for="nameSolicitud" class="col-form-label col-sm2">Nombre solicitud</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedSolicitud.nameSolicitud" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group">
+                <label for="tipo" class="col-form-label col-sm2">Tipo</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedSolicitud.tipo" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="peso_minimo" class="col-form-label col-sm2">Peso minimo</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedSolicitud.peso_minimo" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="fecha_solicitud" class="col-form-label col-sm2">Fecha de la solicitud</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedSolicitud.fecha_solicitud" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="fecha_entrega" class="col-form-label col-sm2">Fecha de la entrega</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedSolicitud.fecha_entrega" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="descripcion" class="col-form-label col-sm2">Descripcion</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedSolicitud.descripcion" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="empleado" class="col-form-label col-sm2">Empleado</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedSolicitud.empleado" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <ul>
+            <li *ngFor="let solicitud of solicitudes">
+                <h5 (click)="solicitudClicked(solicitud)">{{solicitud.nameSolicitud}} - {{solicitud.tipo}} - {{solicitud.peso_minimo}} - 
+                    {{solicitud.fecha_solicitud}} - {{solicitud.fecha_entrega}} - {{solicitud.descripcion}}
+                </h5>
+            </li>
+        </ul>
+        <button (click)="updateSolicitud()">update</button>
+        <button (click)="addSolicitud()">create</button>
+        <button (click)="deleteSolicitud()">delete</button>      
+    </div>
+</div>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Name S</th>
+            <th>Tipo</th>
+            <th>Peso min</th>
+            <th>Fecha Solicitud</th>
+            <th>Fecha Entrega</th>
+            <th>Descripcion</th>
+            <th>Empelado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let solicitud of solicitudes">
+            <td>{{solicitud.nameSolicitud}}</td>
+            <td>{{solicitud.tipo}}</td>
+            <td>{{solicitud.peso_minimo}}</td>
+            <td>{{solicitud.fecha_solicitud}}</td>
+            <td>{{solicitud.fecha_entrega}}</td>
+            <td>{{solicitud.descripcion}}</td>
+            <td>{{solicitud.empleado}}</td>         
+        </tr>
+    </tbody>
+</table>

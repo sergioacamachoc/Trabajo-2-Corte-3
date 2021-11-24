@@ -1,0 +1,64 @@
+<br>
+<br>
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Ingredientes de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos del nuevo Ingrediente)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group">
+                <label for="nameIngrediente" class="col-form-label col-sm2">Name</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedIngrediente.nameIngrediente" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group">
+                <label for="unidad_medida" class="col-form-label col-sm2">Unidad de medida</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedIngrediente.unidad_medida" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="cantidad" class="col-form-label col-sm2">Cantidad</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedIngrediente.cantidad" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <ul>
+            <li *ngFor="let ingrediente of ingredientes">
+                <h5 (click)="ingredienteClicked(ingrediente)">{{ingrediente.nameIngrediente}} - {{ingrediente.unidad_medida}} - {{ingrediente.cantidad}}</h5>
+            </li>
+        </ul>
+        <button (click)="updateIngrediente()">update</button>
+        <button (click)="addIngrediente()">create</button>
+        <button (click)="deleteIngrediente()">delete</button>
+    </div>
+</div>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Unidad Medida</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ingrediente of ingredientes">
+            <td>{{ingrediente.nameIngrediente}}</td>
+            <td>{{ingrediente.unidad_medida}}</td>
+            <td>{{ingrediente.cantidad}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+  <hr>

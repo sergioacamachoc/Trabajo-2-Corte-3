@@ -1,0 +1,56 @@
+<br>
+<br>
+<div class="text-center row">
+    <h2 class="section-heading text-uppercase">Empleados de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos del nuevo empleado)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group">
+                <label for="nombre" class="col-form-label col-sm2">Nombre</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedEmpleado.nombre" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group">
+                <label for="salario" class="col-form-label col-sm2">Salario</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedEmpleado.salario" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <ul>
+        <li *ngFor="let empleado of empleados">
+            <h5 (click)="empleadoClicked(empleado)">{{empleado.nombre}} - {{empleado.salario}}</h5>
+        </li>
+        </ul>
+        <hr>
+        <button (click)="updateEmpelado()">update</button>
+        <button (click)="addEmpelado()">create</button>
+        <button (click)="deleteEmpelado()">delete</button>
+    </div>
+</div>
+<table class="table table-success table-striped abs-center">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Salario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let empleado of empleados">
+            <td>{{empleado.id}}</td>
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.salario}}</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+
+

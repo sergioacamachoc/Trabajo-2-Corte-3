@@ -1,0 +1,97 @@
+<br>
+<br>
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Finales de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos del nuevo final)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="coccion" class="col-form-label col-sm2">Coccion</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedFinal.coccion" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="decorador" class="col-form-label col-sm2">Decorador</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedFinal.decorador" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="fechahora_inicio" class="col-form-label col-sm2">Fecha hora inicio</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedFinal.fechahora_inicio" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="fechahora_final" class="col-form-label col-sm2">Fecha hora final</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedFinal.fechahora_final" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="peso_final" class="col-form-label col-sm2">Peso Final</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedFinal.peso_final" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="fecha_entrega" class="col-form-label col-sm2">Fecha entrega</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedFinal.fecha_entrega" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <ul>
+            <li *ngFor="let final of finales">
+                <h5 (click)="finalClicked(final)">{{final.coccion}} - {{final.decorador}} 
+                - {{final.peso_final}} - {{final.fecha_entrega}}
+                </h5>
+            </li>
+        </ul>
+        <button (click)="updateFinal()">update</button>
+        <button (click)="addFinal()">create</button>
+        <button (click)="deleteFinal()">delete</button>      
+    </div>
+</div>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Coccion</th>
+            <th>Decorador</th>
+            <th>Peso final</th>
+            <th>Fecha entrega</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let final of finales">
+            <td>{{final.coccion}}</td>
+            <td>{{final.decorador}}</td>
+            <td>{{final.peso_final}}</td>
+            <td>{{final.fecha_entrega}}</td>
+        </tr>
+    </tbody>
+</table>
+

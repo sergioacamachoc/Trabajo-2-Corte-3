@@ -1,0 +1,78 @@
+<br>
+<br>
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Decoradores de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos del nuevo pastelero)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group">
+                <label for="empleado" class="col-form-label col-sm2">Empleado</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedDecorador.empleado" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="n_pasaporteD" class="col-form-label col-sm2">Numero pasaporte Decorador</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedDecorador.n_pasaporteD" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="pais_origenD" class="col-form-label col-sm2">País origen Decorador</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedDecorador.pais_origenD" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="experienciaD" class="col-form-label col-sm2">Experiencia Decorador</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedDecorador.experienciaD" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <ul>
+            <li *ngFor="let decorador of decoradores">
+                <h5 (click)="decoradorClicked(decorador)">{{decorador.empleado}} - {{decorador.n_pasaporteD}} - 
+                    {{decorador.pais_origenD}} - {{decorador.experienciaD}}
+                </h5>
+            </li>
+            </ul>
+        <button (click)="updateDecorador()">update</button>
+        <button (click)="addDecorador()">create</button>
+        <button (click)="deleteDecorador()">delete</button>      
+    </div>
+</div>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Empleado</th>
+            <th>Num Pasaporte</th>
+            <th>Pais Origen</th>
+            <th>Experiencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let decorador of decoradores">
+            <td>{{decorador.empleado}}</td>
+            <td>{{decorador.n_pasaporteD}}</td>
+            <td>{{decorador.pais_origenD}}</td>
+            <td>{{decorador.experienciaD}}</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+

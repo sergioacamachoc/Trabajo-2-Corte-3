@@ -1,0 +1,90 @@
+<br>
+<br>
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Cocciones de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos de la nueva coccion)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="elaboracion" class="col-form-label col-sm2">Elaboracion</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedCoccion.elaboracion" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="temperatura" class="col-form-label col-sm2">Temperatura</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedCoccion.temperatura" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="fechahora_inicio" class="col-form-label col-sm2">Fecha Hora inicio</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedCoccion.fechahora_inicio" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="fechahora_final" class="col-form-label col-sm2">Fecha Hora final</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedCoccion.fechahora_final" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="horno" class="col-form-label col-sm2">Horno</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedCoccion.horno" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+    <div class="transparent">
+        <ul>
+            <li *ngFor="let coccion of cocciones">
+                <h5 (click)="coccionClicked(coccion)"> {{coccion.elaboracion}} - {{coccion.temperatura}} - {{coccion.fechahora_inicio}} - 
+                    {{coccion.fechahora_final}} - {{coccion.horno}}
+                </h5>
+            </li>
+        </ul>
+        <button (click)="updateCoccion()">update</button>
+        <button (click)="addCoccion()">create</button>
+        <button (click)="deleteCoccion()">delete</button>      
+    </div>
+</div>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Elaboracion</th>
+            <th>Temperatura</th>
+            <th>Fecha hora inicio</th>
+            <th>Fecha hora final</th>
+            <th>Horno</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let coccion of cocciones">
+            <td>{{coccion.elaboracion}}</td>
+            <td>{{coccion.temperatura}}</td>
+            <td>{{coccion.fechahora_inicio}}</td>
+            <td>{{coccion.fechahora_final}}</td>
+            <tfoot>{{coccion.horno}}</tfoot>
+        </tr>
+    </tbody>
+</table>
+

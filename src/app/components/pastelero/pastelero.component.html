@@ -1,0 +1,80 @@
+<br>
+<br>
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Pasteleros de Api</h2>
+    <h3 class="section-subheading text-muted">(Aquí va a ingresar los datos del nuevo pastelero)</h3>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="empleado" class="col-form-label col-sm2">Empleado</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedPastelero.empleado" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="n_pasaporteP" class="col-form-label col-sm2">Numero pasaporte Pastelero</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedPastelero.n_pasaporteP" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="pais_origenP" class="col-form-label col-sm2">País origen Pastelero</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedPastelero.pais_origenP" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <form>
+            <div class="form-group row">
+                <label for="experienciaP" class="col-form-label col-sm2">Experiencia Pastelero</label>
+                <div>
+                    <input style="margin-bottom: 10px; width: 60%;" class="col-md-6 offset-md-3" type="text" [(ngModel)]="selectedPastelero.experienciaP" [ngModelOptions]="{standalone: true}"/><br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="transparent">
+        <ul>
+            <li *ngFor="let pastelero of pasteleros">
+                <h5 (click)="pasteleroClicked(pastelero)">{{pastelero.empleado}} - {{pastelero.n_pasaporteP}} - 
+                    {{pastelero.pais_origenP}} - {{pastelero.experienciaP}}</h5>
+            </li>
+        </ul>
+        <button (click)="updatePastelero()">update</button>
+        <button (click)="addPastelero()">create</button>
+        <button (click)="deletePastelero()">delete</button>
+    </div>
+</div>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Empleado</th>
+            <th>Num Pasaporte</th>
+            <th>Pais Origen</th>
+            <th>Experiencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pastelero of pasteleros">
+            <td>{{pastelero.empleado}}</td>
+            <td>{{pastelero.n_pasaporteP}}</td>
+            <td>{{pastelero.pais_origenP}}</td>
+            <td>{{pastelero.experienciaP}}</td>
+        
+        </tr>
+    </tbody>
+</table>
+<hr>
+
+
+
